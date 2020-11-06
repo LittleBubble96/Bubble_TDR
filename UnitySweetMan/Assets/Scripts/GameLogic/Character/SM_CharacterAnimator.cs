@@ -7,8 +7,10 @@ public class SM_CharacterAnimator : MonoBehaviour
 
     public AniState AnimatorState = new AniState();
 
-  
-    
+    [Bubble_Name("跳跃中间中断时间")]
+    public float JumpBreakTime = 0.4f;
+
+    private float tempJumpBreakTime;
     #region 属性参数
 
     private const string HorizontalParameter = "horizontal";
@@ -56,7 +58,15 @@ public class SM_CharacterAnimator : MonoBehaviour
         }
 
         #endregion
-       
+
+        if (tempJumpBreakTime>0&&AnimatorState.Jumped)
+        {
+            tempJumpBreakTime -= dt;
+            if (tempJumpBreakTime<=0)
+            {
+                SetAnimatorSpeed(0);
+            }
+        }
     }
     
     /// <summary>
@@ -111,17 +121,32 @@ public class SM_CharacterAnimator : MonoBehaviour
     /// 设置Jump
     /// </summary>
     /// <param name="value"></param>
-    public void SetJump(bool value)
+    public void SetJumped(bool value)
     {
-        AnimatorState.Jump = value;
-        if (!value) return;
-        SetHorizontalParameter(0);
-        SetVerticalParameter(1);
+        AnimatorState.Jumped = value;
+        if (value)
+        {
+            SetHorizontalParameter(0);
+            SetVerticalParameter(1);
+            tempJumpBreakTime = JumpBreakTime;
+        }
+        else
+        {
+            SetAnimatorSpeed(1);
+        }
+
     }
     #endregion
-   
 
-   
+    /// <summary>
+    /// 设置动画速度
+    /// </summary>
+    /// <param name="speed"></param>
+    private void SetAnimatorSpeed(float speed)
+    {
+        _animator.speed = speed;
+    }
+
 }
 
 public struct AniState
@@ -134,7 +159,7 @@ public struct AniState
     /// <summary>
     /// 是否跳跃
     /// </summary>
-    public bool Jump;
+    public bool Jumped;
 
     /// <summary>
     /// 是否正在跑步

@@ -208,9 +208,9 @@ GameObject:
   - component: {fileID: 8899571435981574411}
   - component: {fileID: 3214408866108491811}
   - component: {fileID: 3836187768008462998}
-  - component: {fileID: -4947603129727400424}
+  - component: {fileID: 4369568842611095163}
   m_Layer: 5
-  m_Name: Test_01
+  m_Name: UI_GameHomeView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-4947603129727400424
+--- !u!114 &4369568842611095163
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -283,10 +283,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3063871775342142784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75977906f40b4e541a993ff1e0d7b016, type: 3}
+  m_Script: {fileID: 11500000, guid: 507322f576a8ce247a245b8af11b93bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _des: {fileID: 5057503505895193532}
+  BeginGameBtn: {fileID: 5363733967581676114}
 --- !u!1 &3403399117297889813
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,15 +353,15 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 85
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 85
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: "\u5F00\u59CB\u6E38\u620F"

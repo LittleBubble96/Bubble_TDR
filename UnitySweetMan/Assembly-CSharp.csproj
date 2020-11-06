@@ -112,50 +112,55 @@
      <Compile Include="Assets\Scripts\GameFramework\01_Scripts\Example\Example04_ObjectPool\CubeObject.cs" />
      <Compile Include="Assets\Scripts\GameFramework\01_Scripts\Example\Example04_ObjectPool\Example04.cs" />
      <Compile Include="Assets\Scripts\GameLogic\Character\SM_CharacterAnimator.cs" />
+     <Compile Include="Assets\Scripts\GameLogic\Logic\SM_GameManager.cs" />
+     <Compile Include="Assets\Scripts\GameLogic\Logic\SM_LevelData.cs" />
+     <Compile Include="Assets\Scripts\GameLogic\Logic\SM_SceneManager.cs" />
+     <Compile Include="Assets\Scripts\GameLogic\Other\SM_Enum.cs" />
+     <Compile Include="Assets\Scripts\GameLogic\View\UI_GameHomeView.cs" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>E:/GitHub/UnitySweetMan/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.VSCode.Editor">
- <HintPath>E:/GitHub/UnitySweetMan/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>E:/GitHub/UnitySweetMan/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UI">
- <HintPath>E:/GitHub/UnitySweetMan/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Timeline">
- <HintPath>E:/GitHub/UnitySweetMan/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
- </Reference>
- <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>E:/GitHub/UnitySweetMan/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Rider.Editor">
- <HintPath>E:/GitHub/UnitySweetMan/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro">
- <HintPath>E:/GitHub/UnitySweetMan/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.UI">
- <HintPath>E:/GitHub/UnitySweetMan/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Cinemachine">
- <HintPath>E:/GitHub/UnitySweetMan/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+ <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.VSCode.Editor">
+ <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Recorder.Editor">
- <HintPath>E:/GitHub/UnitySweetMan/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+ <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro.Editor">
+ <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Recorder">
- <HintPath>E:/GitHub/UnitySweetMan/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
+ <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Timeline">
+ <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.CollabProxy.Editor">
+ <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Postprocessing.Editor">
- <HintPath>E:/GitHub/UnitySweetMan/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+ <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Rider.Editor">
+ <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Postprocessing.Runtime">
- <HintPath>E:/GitHub/UnitySweetMan/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+ <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="com.unity.cinemachine.editor">
- <HintPath>E:/GitHub/UnitySweetMan/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+ <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro">
+ <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Work/Code/Unity/2019.4.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

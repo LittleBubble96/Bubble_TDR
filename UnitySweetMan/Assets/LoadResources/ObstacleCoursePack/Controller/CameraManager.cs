@@ -103,10 +103,8 @@ public class CameraManager : MonoBehaviour {
 		camTrans.localPosition = new Vector3(0, 0, -dist);
 	}
 
-	public static CameraManager singleton; //You can call CameraManager.singleton from other script (There can be only one)
 	void Awake()
 	{
-		singleton = this; //Self-assigns
 		Init();
 	}
 

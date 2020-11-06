@@ -35,8 +35,20 @@ public class CharacterControls : MonoBehaviour {
 		distToGround = GetComponent<Collider>().bounds.extents.y;
 	}
 	
-	bool IsGrounded (){
-		return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.01f);
+	bool IsGrounded ()
+	{
+		var isGrounded = Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.01f);
+		if (!isGrounded && !_characterAnimator.AnimatorState.Jumped)
+		{
+			_characterAnimator.SetJumped(true);
+		}
+		var isGroundedDown = Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
+		if (_characterAnimator.AnimatorState.Jumped && isGroundedDown)
+		{
+			_characterAnimator.SetJumped(false);
+
+		}
+		return isGrounded;
 	}
 	
 	void Awake () {
@@ -45,13 +57,15 @@ public class CharacterControls : MonoBehaviour {
 		rb.useGravity = false;
 
 		checkPoint = transform.position;
-		Cursor.visible = false;		
 		_characterAnimator = GetComponentInChildren<SM_CharacterAnimator>();
 		_characterAnimator.Init();
 	}
 	
 	void FixedUpdate ()
 	{
+		if (SM_GameManager.Instance.GameState!=EGameState.Playing)
+			return;
+		
 		_characterAnimator.SetIdle(IsGrounded() &&
 		                           moveDir==Vector3.zero);
 		_characterAnimator.SetRun( IsGrounded() &&
@@ -105,7 +119,6 @@ public class CharacterControls : MonoBehaviour {
 				// Jump
 				if (IsGrounded() && Input.GetButton("Jump"))
 				{
-					_characterAnimator.SetJump(true);
 					rb.velocity = new Vector3(velocity.x, CalculateJumpVerticalSpeed(), velocity.z);
 				}
 			}
@@ -138,6 +151,8 @@ public class CharacterControls : MonoBehaviour {
 
 	private void Update()
 	{
+		if (SM_GameManager.Instance.GameState!=EGameState.Playing)
+			return;
 		float h = Input.GetAxis("Horizontal");
 		float v = Input.GetAxis("Vertical");
 
