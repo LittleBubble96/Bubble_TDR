@@ -52,7 +52,7 @@ public class SM_GameManager : Bubble_MonoSingle<SM_GameManager>
                         BubbleFrameEntry.GetModel<UI_Manager>().HideView(UIType.Normal);
                         BubbleFrameEntry.GetModel<UI_Manager>().Show(UI_Name.UI_GameHomeView,new UI_GameHomeContent());
                         //创建关卡
-                        SM_SceneManager.Instance.ClearLevel();
+                        SM_SceneManager.Instance.CreateLevel();
                         break;
                     case EGameState.Playing:
                         //关闭其他页面 显示游戏页

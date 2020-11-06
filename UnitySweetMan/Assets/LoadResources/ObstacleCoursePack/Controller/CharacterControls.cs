@@ -15,7 +15,7 @@ public class CharacterControls : MonoBehaviour {
 	public float maxFallSpeed = 20.0f;
 	public float rotateSpeed = 25f; //Speed the player rotate
 	private Vector3 moveDir;
-	public GameObject cam;
+	private GameObject cam;
 	private Rigidbody rb;
 
 	private float distToGround;
@@ -30,11 +30,7 @@ public class CharacterControls : MonoBehaviour {
 	private bool slide = false;
 
 	private SM_CharacterAnimator _characterAnimator;
-	void  Start (){
-		// get the distance to ground
-		distToGround = GetComponent<Collider>().bounds.extents.y;
-	}
-	
+
 	bool IsGrounded ()
 	{
 		var isGrounded = Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.01f);
@@ -51,14 +47,16 @@ public class CharacterControls : MonoBehaviour {
 		return isGrounded;
 	}
 	
-	void Awake () {
+	public void Init () {
 		rb = GetComponent<Rigidbody>();
 		rb.freezeRotation = true;
 		rb.useGravity = false;
 
+		cam = SM_SceneManager.Instance.CurCamera.gameObject;
 		checkPoint = transform.position;
 		_characterAnimator = GetComponentInChildren<SM_CharacterAnimator>();
 		_characterAnimator.Init();
+		distToGround = GetComponent<Collider>().bounds.extents.y;
 	}
 	
 	void FixedUpdate ()

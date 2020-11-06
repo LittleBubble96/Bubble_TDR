@@ -8,7 +8,8 @@ public class CameraManager : MonoBehaviour {
 	public float mouseSpeed = 2; //Speed ​​at which we rotate the camera with the mouse
 	//public float controllerSpeed = 5; //Speed ​​at which we rotate the camera with the joystick
 	public float cameraDist = 3; //Distance to which the camera is located
-
+	
+	[HideInInspector]
 	public Transform target; //Player the camera follows
 
 	[HideInInspector]
@@ -63,7 +64,12 @@ public class CameraManager : MonoBehaviour {
 	}
 
 	private void FixedUpdate()
-	{//Function that correctly rotates the camera based on the joystick / mouse and follows the player (the delta time is sent to be independent of the fps)
+	{
+		if (target==null)
+		{
+			return;
+		}
+		//Function that correctly rotates the camera based on the joystick / mouse and follows the player (the delta time is sent to be independent of the fps)
 		float h = Input.GetAxis("Mouse X");
 		float v = Input.GetAxis("Mouse Y");
 
@@ -101,6 +107,14 @@ public class CameraManager : MonoBehaviour {
 		// check if the distance is greater than the max camera distance;
 		if (dist > cameraDist) dist = cameraDist;
 		camTrans.localPosition = new Vector3(0, 0, -dist);
+	}
+
+	/// <summary>
+	/// 设置Target
+	/// </summary>
+	public void SetTarget(Transform t)
+	{
+		target = t;
 	}
 
 	void Awake()
