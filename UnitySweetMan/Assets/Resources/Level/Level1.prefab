@@ -442,7 +442,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &4471838933462670774
 Transform:
@@ -5392,6 +5392,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RotationPlat
       objectReference: {fileID: 0}
+    - target: {fileID: 1705310477133684454, guid: b2df204197c557e46bb5bddaad1c1a76,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1705310477133684474, guid: b2df204197c557e46bb5bddaad1c1a76,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5446,6 +5451,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705310477154896211, guid: b2df204197c557e46bb5bddaad1c1a76,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2df204197c557e46bb5bddaad1c1a76, type: 3}
