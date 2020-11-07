@@ -36,7 +36,7 @@ public class SM_SceneManager : Bubble_MonoSingle<SM_SceneManager>
 
     public void DoUpdate(float dt)
     {
-        
+        CurLevelData.DoUpdate(dt);
     }
 
     /// <summary>

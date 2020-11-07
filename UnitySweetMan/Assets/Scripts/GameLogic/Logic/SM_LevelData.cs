@@ -5,6 +5,7 @@ using UnityEngine;
 public class SM_LevelData : MonoBehaviour
 {
     private Transform _birthPoint;
+    private Transform _deathPoint;
     
     /// <summary>
     /// 当前人物
@@ -15,7 +16,8 @@ public class SM_LevelData : MonoBehaviour
     public void Init()
     {
         _birthPoint = transform.Find("BirthPoint");
-        
+        _deathPoint= transform.Find("DeathPoint");
+            
         //创建人物
         CurCharacter = Instantiate(SM_SceneManager.Instance.CharacterControlses[0], transform);
         CurCharacter.Init();
