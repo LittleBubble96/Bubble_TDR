@@ -55,7 +55,7 @@ public class SM_SceneManager : Bubble_MonoSingle<SM_SceneManager>
             return;
         }
         //随机下标
-        int r = Utility.Random.GetRandom(LevelDatas.Count - 1);
+        int r = Utility.Random.GetRandom(LevelDatas.Count);
         r %= LevelDatas.Count;
         //创建新关卡
         SM_LevelData level = LevelDatas[r];

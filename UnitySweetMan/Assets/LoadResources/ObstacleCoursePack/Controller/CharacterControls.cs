@@ -59,7 +59,7 @@ public class CharacterControls : SM_CharacterBase {
 	{
 		characterAnimator.DoUpdate(Time.deltaTime);
 		//开始玩
-		if (SM_GameManager.Instance.GameState!=EGameState.Playing)
+		if (SM_SceneManager.Instance.CurLevelData.ELevelState!=ELevelState.Playing)
 			return;
 		//成功
 		if (characterAnimator.AnimatorState.Success)
@@ -159,7 +159,7 @@ public class CharacterControls : SM_CharacterBase {
 
 	private void Update()
 	{
-		if (SM_GameManager.Instance.GameState!=EGameState.Playing)
+		if (SM_SceneManager.Instance.CurLevelData.ELevelState!=ELevelState.Playing)
 			return;
 		float h = Input.GetAxis("Horizontal");
 		float v = Input.GetAxis("Vertical");

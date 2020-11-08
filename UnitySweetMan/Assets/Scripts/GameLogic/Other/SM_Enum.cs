@@ -11,6 +11,7 @@ public enum EGameState
 public enum ELevelState
 {
     None,
+    WaitPlay,//等待开始
     Playing,//正在玩
     WaitSettle,//等待结算
     Settle//结算

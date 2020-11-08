@@ -116,10 +116,14 @@
      <Compile Include="Assets\Scripts\GameLogic\Character\SM_CharacterAnimator.cs" />
      <Compile Include="Assets\Scripts\GameLogic\Character\SM_CharacterBase.cs" />
      <Compile Include="Assets\Scripts\GameLogic\Logic\SM_GameManager.cs" />
+     <Compile Include="Assets\Scripts\GameLogic\Logic\SM_Level1.cs" />
+     <Compile Include="Assets\Scripts\GameLogic\Logic\SM_Level2.cs" />
      <Compile Include="Assets\Scripts\GameLogic\Logic\SM_LevelData.cs" />
      <Compile Include="Assets\Scripts\GameLogic\Logic\SM_SceneManager.cs" />
      <Compile Include="Assets\Scripts\GameLogic\Other\SM_Enum.cs" />
      <Compile Include="Assets\Scripts\GameLogic\Prop\PropBase.cs" />
+     <Compile Include="Assets\Scripts\GameLogic\Prop\SM_HideProp.cs" />
+     <Compile Include="Assets\Scripts\GameLogic\Prop\SM_HidePropChild.cs" />
      <Compile Include="Assets\Scripts\GameLogic\View\UI_GameHomeView.cs" />
      <Compile Include="Assets\Scripts\GameLogic\View\UI_GameSettleView.cs" />
      <Compile Include="Assets\Scripts\GameLogic\View\UI_GameView.cs" />
@@ -380,6 +384,9 @@
  </Reference>
  <Reference Include="UnityEngine.XRModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.8f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween">
+ <HintPath>D:/UnityHome/SweetBaby/UnitySweetMan/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
  <HintPath>D:/UnityHome/SweetBaby/UnitySweetMan/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
@@ -746,6 +753,10 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{399095FF-CF0C-0D22-F1E2-7516A438E958}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="NavMeshComponentsExamplesEditor.csproj">
       <Project>{11B8D7E0-4F4A-7715-2446-54665D66AE0B}</Project>
       <Name>NavMeshComponentsExamplesEditor</Name>

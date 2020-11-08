@@ -12,22 +12,22 @@ public class SM_LevelData : MonoBehaviour
     [Bubble_Name("AI数量")] 
     public int AiCount;
 
-    [Bubble_Name("过关数")] 
-    public int CrossLevelCount;
-    
-    [Bubble_Name("目标")] 
-    public Transform Target;
 
+    [Bubble_Name("等待开始时间")] 
+    public float WaitBeginTime = 3f;
+    
     [Bubble_Name("等待结算时间")]
     public float WaitTime = 3f;
 
-    private Transform EndTriggerRect;
+    
     private ELevelState _eLevelState;
     
-    private Transform _birthPoint;
-    private Transform _deathPoint;
+    [HideInInspector]
+    public Transform _birthPoint;
+    [HideInInspector]
+    public Transform _deathPoint;
     private float _waitTime;
-    private int crossLevelCount;
+    private float _waitBeginTime;
 
     /// <summary>
     /// 当前人物
@@ -47,27 +47,13 @@ public class SM_LevelData : MonoBehaviour
     [HideInInspector] 
     public List<PropBase> Props = new List<PropBase>();
     
-    /// <summary>
-    /// 当前过关数
-    /// </summary>
-    public int CurCrossLevelCount
-    {
-        get => crossLevelCount;
-        private set
-        {
-            if (crossLevelCount!=value)
-            {
-                crossLevelCount = value;
-                BubbleFrameEntry.GetModel<AppEventDispatcher>().BroadcastListener(EventName.EVENT_CHANGECROSSCOUNT);
-            }
-        }
-    }
-
-    public void Init()
+    [Bubble_Name("目标")] 
+    public Transform Target;
+   
+    public virtual void Init()
     {
         _birthPoint = transform.Find("BirthPoint");
         _deathPoint= transform.Find("DeathPoint");
-        EndTriggerRect = transform.Find("EndTriggerRect");
         
         Props = GetComponentsInChildren<PropBase>().ToList();
             
@@ -77,11 +63,18 @@ public class SM_LevelData : MonoBehaviour
         CurCharacter.transform.position = _birthPoint.position;
 
         CreateAIList();
-        ELevelState = ELevelState.Playing;
     }
 
-    public void DoUpdate(float dt)
+    public virtual void DoUpdate(float dt)
     {
+        if (_waitBeginTime>0)
+        {
+            _waitBeginTime -= dt;
+            if (_waitBeginTime<=0)
+            {
+                ELevelState = ELevelState.Playing;
+            }
+        }
         //等待结算
         if (_waitTime > 0)
         {
@@ -91,48 +84,8 @@ public class SM_LevelData : MonoBehaviour
                 ELevelState = ELevelState.Settle;
             }
         }
-        if (ELevelState!=ELevelState.Playing)
-        {
-            return;
-        }
-        //判断结束
-        if (CurCrossLevelCount >= CrossLevelCount)
-        {
-            ELevelState = ELevelState.WaitSettle;
-        }
-        //主角是否过关
-        if (!CurCharacter.characterAnimator.AnimatorState.Success && IsContainEndTrigger(CurCharacter.transform))
-        {
-            DDebug.Log("主角过关");
-            CurCharacter.characterAnimator.AnimatorState.Success = true;
-            CurCrossLevelCount++;
-            CurCharacter.Order = CurCrossLevelCount;
-        }
-
-        //AI是否过关
-        foreach (var ai in CharacterAIs)
-        {
-            if (!ai.CharacterAnimator.AnimatorState.Success && IsContainEndTrigger(ai.transform))
-            {
-                DDebug.Log("AI过关");
-                ai.CharacterAnimator.AnimatorState.Success = true;
-                CurCrossLevelCount++;
-                ai.Order = CurCrossLevelCount;
-            }
-        }
-
-        
-        
-        //人物死亡
-        if (CurCharacter.transform.position.y<_deathPoint.transform.position.y)
-        {
-            SetCharacterBirth();
-        }
-        //AI行为
-        foreach (var ai in CharacterAIs)
-        {
-            ai.DoUpdate(dt);
-        }
+       
+       
     }
 
     /// <summary>
@@ -159,27 +112,9 @@ public class SM_LevelData : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 是否在重点
-    /// </summary>
-    /// <param name="character"></param>
-    /// <returns></returns>
-    public bool IsContainEndTrigger(Transform character)
+    public virtual string GetGameString()
     {
-        var localScale = EndTriggerRect.localScale;
-        float xLength = localScale.x;
-        float yLength = localScale.y;
-        float zLength = localScale.z;
-        var endPosition = EndTriggerRect.position;
-        var characterPosition = character.position;
-        bool contain =
-            characterPosition.x > endPosition.x - xLength * 0.5f &&
-            characterPosition.x < endPosition.x + xLength * 0.5f &&
-            characterPosition.y > endPosition.y - yLength * 0.5f &&
-            characterPosition.y < endPosition.y + yLength * 0.5f &&
-            characterPosition.z > endPosition.z - zLength * 0.5f &&
-            characterPosition.z < endPosition.z + zLength * 0.5f;
-        return contain;
+        return "";
     }
 
     /// <summary>
@@ -197,6 +132,10 @@ public class SM_LevelData : MonoBehaviour
                 switch (value)
                 {
                     case ELevelState.None:
+                        break;
+                    case ELevelState.WaitPlay:
+                        _waitBeginTime = WaitBeginTime;
+                        BubbleFrameEntry.GetModel<AppEventDispatcher>().BroadcastListener(EventName.EVENT_COUNTDOWN,3);
                         break;
                     case ELevelState.Playing:
                         break;

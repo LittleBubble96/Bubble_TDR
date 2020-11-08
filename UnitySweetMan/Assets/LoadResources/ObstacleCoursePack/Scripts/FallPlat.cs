@@ -9,6 +9,10 @@ public class FallPlat : MonoBehaviour
 
 	void OnCollisionEnter(Collision collision)
 	{
+		if (SM_SceneManager.Instance.CurLevelData.ELevelState!=ELevelState.Playing)
+		{
+			return;
+		}
 		foreach (ContactPoint contact in collision.contacts)
 		{
 			//Debug.DrawRay(contact.point, contact.normal, Color.white);

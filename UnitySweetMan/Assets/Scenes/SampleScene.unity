@@ -178,7 +178,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelDatas:
-  - {fileID: -3369350593850052438, guid: 6265854bf06ab0d46a312a749dc56788, type: 3}
+  - {fileID: 5542209326295594714, guid: 6265854bf06ab0d46a312a749dc56788, type: 3}
+  - {fileID: 6281410359064010626, guid: 4051a169e3713cd4ab854860dea2f316, type: 3}
   CharacterControlses:
   - {fileID: 61890797030518931, guid: 57c9afed79aba144ebfbe8f9f668d4b9, type: 3}
   Camera: {fileID: 8529583332128186654, guid: f2fa009e26a0fc8468f7ce3b0a0af97f, type: 3}

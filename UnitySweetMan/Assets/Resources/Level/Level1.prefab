@@ -529,9 +529,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4471838933029878453}
-  - component: {fileID: -3369350593850052438}
   - component: {fileID: 1085851912490218097}
   - component: {fileID: 3508645584367984884}
+  - component: {fileID: 5542209326295594714}
   m_Layer: 0
   m_Name: Level1
   m_TagString: Untagged
@@ -560,25 +560,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-3369350593850052438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4471838933029878452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d31647eb7abc90e4da6ca7b159873699, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AiCount: 1
-  CrossLevelCount: 1
-  Target: {fileID: 885912253859959308}
-  WaitTime: 3
-  CurCharacter: {fileID: 0}
-  CharacterAIs: []
-  Props: []
 --- !u!114 &1085851912490218097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -637,6 +618,27 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: 8323673be9f197d46bbc32e4efd3116c, type: 2}
+--- !u!114 &5542209326295594714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4471838933029878452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80deda6687f0da24f8d0752bfd53724f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AiCount: 1
+  WaitTime: 3
+  _birthPoint: {fileID: 0}
+  _deathPoint: {fileID: 0}
+  CurCharacter: {fileID: 0}
+  CharacterAIs: []
+  Props: []
+  Target: {fileID: 885912253859959308}
+  CrossLevelCount: 1
 --- !u!1 &4471838933462670762
 GameObject:
   m_ObjectHideFlags: 0

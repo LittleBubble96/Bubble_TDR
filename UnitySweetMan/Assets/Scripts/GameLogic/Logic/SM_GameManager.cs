@@ -64,6 +64,8 @@ public class SM_GameManager : Bubble_MonoSingle<SM_GameManager>
                         BubbleFrameEntry.GetModel<UI_Manager>().Show(UI_Name.UI_GameView,new UI_GameContent());
                         //设置鼠标不可见
                         Cursor.visible = false;
+                        SM_SceneManager.Instance.CurLevelData.ELevelState = ELevelState.WaitPlay;
+
                         break;
                     case EGameState.Settling:
                         BubbleFrameEntry.GetModel<UI_Manager>().HideView(UIType.Normal);
