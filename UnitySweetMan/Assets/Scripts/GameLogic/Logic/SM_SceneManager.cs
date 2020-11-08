@@ -13,6 +13,9 @@ public class SM_SceneManager : Bubble_MonoSingle<SM_SceneManager>
 
     [Bubble_Name("相机")] public CameraManager Camera;
 
+    [Bubble_Name("所有AI")] 
+    public List<SM_CharacterAIBase> CharacterAIBases = new List<SM_CharacterAIBase>();
+    
     [Bubble_Name("人物出生掉落高度")] 
     public float BirthHeight = 10f;
     
@@ -70,7 +73,7 @@ public class SM_SceneManager : Bubble_MonoSingle<SM_SceneManager>
     {
         if (CurLevelData!=null)
         {
-            DestroyImmediate(CurLevelData);
+            DestroyImmediate(CurLevelData.gameObject);
         }
     }
 }

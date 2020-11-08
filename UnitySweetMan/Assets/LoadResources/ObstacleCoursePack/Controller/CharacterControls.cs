@@ -1,47 +1,43 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Serialization;
 
 [RequireComponent (typeof (Rigidbody))]
 [RequireComponent (typeof (CapsuleCollider))]
 
-public class CharacterControls : MonoBehaviour {
+public class CharacterControls : SM_CharacterBase {
 	
 	public float speed = 10.0f;
 	public float airVelocity = 8f;
-	public float gravity = 10.0f;
 	public float maxVelocityChange = 10.0f;
 	public float jumpHeight = 2.0f;
 	public float maxFallSpeed = 20.0f;
 	public float rotateSpeed = 25f; //Speed the player rotate
 	private Vector3 moveDir;
 	private GameObject cam;
-	private Rigidbody rb;
 
 	private float distToGround;
 
-	private bool canMove = true; //If player is not hitted
-	private bool isStuned = false;
-	private bool wasStuned = false; //If player was stunned before get stunned another time
-	private float pushForce;
-	private Vector3 pushDir;
+	
+	
 
 	public Vector3 checkPoint;
-	private bool slide = false;
 
-	private SM_CharacterAnimator _characterAnimator;
+	[FormerlySerializedAs("_characterAnimator")] [HideInInspector]
+	public SM_CharacterAnimator characterAnimator;
 
 	bool IsGrounded ()
 	{
 		var isGrounded = Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.01f);
-		if (!isGrounded && !_characterAnimator.AnimatorState.Jumped)
+		if (!isGrounded && !characterAnimator.AnimatorState.Jumped)
 		{
-			_characterAnimator.SetJumped(true);
+			characterAnimator.SetJumped(true);
 		}
 		var isGroundedDown = Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
-		if (_characterAnimator.AnimatorState.Jumped && isGroundedDown)
+		if (characterAnimator.AnimatorState.Jumped && isGroundedDown)
 		{
-			_characterAnimator.SetJumped(false);
+			characterAnimator.SetJumped(false);
 
 		}
 		return isGrounded;
@@ -54,23 +50,37 @@ public class CharacterControls : MonoBehaviour {
 
 		cam = SM_SceneManager.Instance.CurCamera.gameObject;
 		checkPoint = transform.position;
-		_characterAnimator = GetComponentInChildren<SM_CharacterAnimator>();
-		_characterAnimator.Init();
+		characterAnimator = GetComponentInChildren<SM_CharacterAnimator>();
+		characterAnimator.Init();
 		distToGround = GetComponent<Collider>().bounds.extents.y;
 	}
 	
 	void FixedUpdate ()
 	{
+		characterAnimator.DoUpdate(Time.deltaTime);
+		//开始玩
 		if (SM_GameManager.Instance.GameState!=EGameState.Playing)
 			return;
-		
-		_characterAnimator.SetIdle(IsGrounded() &&
+		//成功
+		if (characterAnimator.AnimatorState.Success)
+		{
+			characterAnimator.SetSuccess();
+			rb.velocity = Vector3.zero;
+			return;
+		}
+		//失败
+		if (characterAnimator.AnimatorState.Failed)
+		{
+			characterAnimator.SetFailed();
+			rb.velocity = Vector3.zero;
+			return;
+		}
+		characterAnimator.SetIdle(IsGrounded() &&
 		                           moveDir==Vector3.zero);
-		_characterAnimator.SetRun( IsGrounded() &&
+		characterAnimator.SetRun( IsGrounded() &&
 		                           (Math.Abs(moveDir.x) > 0 || Math.Abs(moveDir.z) > 0) &&
 		                           Math.Abs(moveDir.y) <= 0);
 		
-		_characterAnimator.DoUpdate(Time.deltaTime);
 		
 		if (canMove)
 		{
@@ -178,50 +188,12 @@ public class CharacterControls : MonoBehaviour {
 		return Mathf.Sqrt(2 * jumpHeight * gravity);
 	}
 
-	public void HitPlayer(Vector3 velocityF, float time)
-	{
-		rb.velocity = velocityF;
-
-		pushForce = velocityF.magnitude;
-		pushDir = Vector3.Normalize(velocityF);
-		StartCoroutine(Decrease(velocityF.magnitude, time));
-	}
+	
 
 	public void LoadCheckPoint()
 	{
 		transform.position = checkPoint;
 	}
 
-	private IEnumerator Decrease(float value, float duration)
-	{
-		if (isStuned)
-			wasStuned = true;
-		isStuned = true;
-		canMove = false;
-
-		float delta = 0;
-		delta = value / duration;
-
-		for (float t = 0; t < duration; t += Time.deltaTime)
-		{
-			yield return null;
-			if (!slide) //Reduce the force if the ground isnt slide
-			{
-				pushForce = pushForce - Time.deltaTime * delta;
-				pushForce = pushForce < 0 ? 0 : pushForce;
-				//Debug.Log(pushForce);
-			}
-			rb.AddForce(new Vector3(0, -gravity * GetComponent<Rigidbody>().mass, 0)); //Add gravity
-		}
-
-		if (wasStuned)
-		{
-			wasStuned = false;
-		}
-		else
-		{
-			isStuned = false;
-			canMove = true;
-		}
-	}
+	
 }

@@ -136,6 +136,24 @@ public class SM_CharacterAnimator : MonoBehaviour
         }
 
     }
+    
+    /// <summary>
+    /// 设置成功开心动画
+    /// </summary>
+    public void SetSuccess()
+    {
+        SetHorizontalParameter(1);
+        SetVerticalParameter(0);
+    }
+
+    /// <summary>
+    /// 设置失败动画
+    /// </summary>
+    public void SetFailed()
+    {
+        SetHorizontalParameter(0);
+        SetVerticalParameter(-1);
+    }
     #endregion
 
     /// <summary>
@@ -165,7 +183,16 @@ public struct AniState
     /// 是否正在跑步
     /// </summary>
     public bool Running;
-    
+
+    /// <summary>
+    /// 成功
+    /// </summary>
+    public bool Success;
+
+    /// <summary>
+    /// 失败
+    /// </summary>
+    public bool Failed;
 }
 
 

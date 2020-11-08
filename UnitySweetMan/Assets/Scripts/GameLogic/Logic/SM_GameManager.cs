@@ -31,7 +31,10 @@ public class SM_GameManager : Bubble_MonoSingle<SM_GameManager>
     /// </summary>
     private void Update()
     {
-        SM_SceneManager.Instance.DoUpdate(_dt);
+        if (Instance.GameState==EGameState.Playing)
+        {
+            SM_SceneManager.Instance.DoUpdate(_dt);
+        }
     }
     
     /// <summary>
@@ -53,14 +56,20 @@ public class SM_GameManager : Bubble_MonoSingle<SM_GameManager>
                         BubbleFrameEntry.GetModel<UI_Manager>().Show(UI_Name.UI_GameHomeView,new UI_GameHomeContent());
                         //创建关卡
                         SM_SceneManager.Instance.CreateLevel();
+                        Cursor.visible = true;
                         break;
                     case EGameState.Playing:
                         //关闭其他页面 显示游戏页
                         BubbleFrameEntry.GetModel<UI_Manager>().HideView(UIType.Normal);
+                        BubbleFrameEntry.GetModel<UI_Manager>().Show(UI_Name.UI_GameView,new UI_GameContent());
                         //设置鼠标不可见
                         Cursor.visible = false;
                         break;
                     case EGameState.Settling:
+                        BubbleFrameEntry.GetModel<UI_Manager>().HideView(UIType.Normal);
+                        BubbleFrameEntry.GetModel<UI_Manager>().Show(UI_Name.UI_GameSettleView,new UI_GameSettleContent(SM_SceneManager.Instance.CurLevelData.CurCharacter.Order));
+                        
+                        Cursor.visible = true;
                         break;
                 }
             }

@@ -7,6 +7,8 @@
         public const string UI_TEST_02 = "Test_02";
         
         public const string UI_GameHomeView = "UI_GameHomeView";
+        public const string UI_GameView = "UI_GameView";
+        public const string UI_GameSettleView = "UI_GameSettleView";
     }
 
 }

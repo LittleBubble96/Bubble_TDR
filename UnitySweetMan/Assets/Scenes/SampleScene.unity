@@ -182,6 +182,8 @@ MonoBehaviour:
   CharacterControlses:
   - {fileID: 61890797030518931, guid: 57c9afed79aba144ebfbe8f9f668d4b9, type: 3}
   Camera: {fileID: 8529583332128186654, guid: f2fa009e26a0fc8468f7ce3b0a0af97f, type: 3}
+  CharacterAIBases:
+  - {fileID: -2741691308553198620, guid: 34c0bdb321d9e0c44a4a551157ca0e2a, type: 3}
   BirthHeight: 10
   CurLevelData: {fileID: 0}
   CurCamera: {fileID: 0}
