@@ -27,15 +27,15 @@ public class UI_GameSettleView : UI_Base<UI_GameSettleContent>
     {
         base.SetContent(content);
         //通关人数
-        OrderText.text = UiBaseContent.Order + "";
+        OrderText.text = UiBaseContent.SettleString + "";
     }
 }
 public class UI_GameSettleContent :UI_BaseContent
 {
-    public int Order;
+    public string SettleString;
 
-    public UI_GameSettleContent(int order)
+    public UI_GameSettleContent(string settleString)
     {
-        Order = order;
+        SettleString = settleString;
     }
 }

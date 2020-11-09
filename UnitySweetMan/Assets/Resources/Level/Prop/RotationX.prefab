@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 7259108464032011172}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 123
   m_IsActive: 1
 --- !u!4 &7259108464032011179
 Transform:
@@ -95,10 +95,10 @@ GameObject:
   - component: {fileID: 7259108465490794167}
   m_Layer: 0
   m_Name: RotationX
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 123
   m_IsActive: 1
 --- !u!4 &7259108465490794188
 Transform:
@@ -107,9 +107,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7259108465490794166}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 14.73, y: 1.16, z: 0.91}
-  m_LocalScale: {x: 5, y: 0.25, z: 2}
+  m_LocalScale: {x: 15.4475, y: 0.772375, z: 6.179}
   m_Children:
   - {fileID: 7259108465829285905}
   - {fileID: 7259108464032011179}
@@ -203,7 +203,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 14.73, y: 1.16, z: 0.91}
+  m_ConnectedAnchor: {x: -8.12, y: 3.77, z: 126.74}
   m_UseSpring: 0
   m_Spring:
     spring: 10000
@@ -241,10 +241,10 @@ GameObject:
   - component: {fileID: 7259108465829285932}
   m_Layer: 0
   m_Name: RotationPlat (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 123
   m_IsActive: 1
 --- !u!4 &7259108465829285905
 Transform:

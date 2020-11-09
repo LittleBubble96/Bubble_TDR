@@ -79,7 +79,7 @@ public class CameraManager : MonoBehaviour {
 		float targetSpeed = mouseSpeed;
 
 		/*if (c_h != 0 || c_v != 0)
-		{ //Overwrites if i use joystick
+		{ //Overwrites if i use joysticksm
 			h = c_h;
 			v = -c_v;
 			targetSpeed = controllerSpeed; 

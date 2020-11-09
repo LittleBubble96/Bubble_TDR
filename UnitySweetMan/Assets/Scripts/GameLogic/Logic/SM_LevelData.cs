@@ -112,7 +112,20 @@ public class SM_LevelData : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 获取游戏内文本
+    /// </summary>
+    /// <returns></returns>
     public virtual string GetGameString()
+    {
+        return "";
+    }
+
+    /// <summary>
+    /// 获取结算页文本
+    /// </summary>
+    /// <returns></returns>
+    public virtual string GetGameSettleString()
     {
         return "";
     }
@@ -134,7 +147,7 @@ public class SM_LevelData : MonoBehaviour
                     case ELevelState.None:
                         break;
                     case ELevelState.WaitPlay:
-                        _waitBeginTime = WaitBeginTime;
+                        _waitBeginTime = WaitBeginTime + 3;
                         BubbleFrameEntry.GetModel<AppEventDispatcher>().BroadcastListener(EventName.EVENT_COUNTDOWN,3);
                         break;
                     case ELevelState.Playing:

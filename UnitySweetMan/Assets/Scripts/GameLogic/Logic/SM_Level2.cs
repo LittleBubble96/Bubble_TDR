@@ -36,7 +36,38 @@ public class SM_Level2 : SM_LevelData
         {
             return;
         }
+
         CurGameTime -= dt;
+       
+        //判断结束
+        if (CurGameTime <= 0 )
+        {
+            CurCharacter.characterAnimator.AnimatorState.Success = true;
+            ELevelState = ELevelState.WaitSettle;
+        }
+
+        if (CurCharacter.characterAnimator.AnimatorState.Failed)
+        {
+            ELevelState = ELevelState.WaitSettle;
+        }
+
+        //人物死亡
+        if (CurCharacter.transform.position.y<_deathPoint.transform.position.y)
+        {
+            CurCharacter.characterAnimator.AnimatorState.Failed = true;
+        }
+        //AI行为
+        foreach (var ai in CharacterAIs)
+        {
+            ai.DoUpdate(dt);
+        }
+    }
+
+    public override string GetGameSettleString()
+    {
+        return CurCharacter.characterAnimator.AnimatorState.Success ? 
+            "恭喜成功":
+            $"遗憾失败,坚持了{GameTime-CurGameTime}秒";
     }
 
     public override string GetGameString()
@@ -45,4 +76,5 @@ public class SM_Level2 : SM_LevelData
         int s = (int) CurGameTime % 60;
         return m +" : "+ s;
     }
+    
 }

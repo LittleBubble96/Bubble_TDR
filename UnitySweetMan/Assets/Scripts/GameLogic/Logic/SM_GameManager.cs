@@ -69,7 +69,7 @@ public class SM_GameManager : Bubble_MonoSingle<SM_GameManager>
                         break;
                     case EGameState.Settling:
                         BubbleFrameEntry.GetModel<UI_Manager>().HideView(UIType.Normal);
-                        BubbleFrameEntry.GetModel<UI_Manager>().Show(UI_Name.UI_GameSettleView,new UI_GameSettleContent(SM_SceneManager.Instance.CurLevelData.CurCharacter.Order));
+                        BubbleFrameEntry.GetModel<UI_Manager>().Show(UI_Name.UI_GameSettleView,new UI_GameSettleContent(SM_SceneManager.Instance.CurLevelData.GetGameSettleString()));
                         
                         Cursor.visible = true;
                         break;

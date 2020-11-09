@@ -14,10 +14,10 @@ GameObject:
   - component: {fileID: 5557061842344321955}
   m_Layer: 0
   m_Name: Bounce
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 123
   m_IsActive: 1
 --- !u!4 &5557061842344321952
 Transform:
@@ -108,10 +108,10 @@ GameObject:
   - component: {fileID: 5557061842829109322}
   m_Layer: 0
   m_Name: Bounce
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 123
   m_IsActive: 1
 --- !u!4 &5557061842829109323
 Transform:
@@ -120,9 +120,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5557061842829109327}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.85, y: 0.29, z: 28.91}
-  m_LocalScale: {x: 2.2847, y: 1, z: 1.8276}
+  m_LocalScale: {x: 12.798266, y: 1, z: 1.8276}
   m_Children:
   - {fileID: 5557061842344321952}
   m_Father: {fileID: 0}

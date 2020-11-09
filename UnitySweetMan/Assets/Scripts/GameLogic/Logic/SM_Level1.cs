@@ -89,6 +89,11 @@ public class SM_Level1 : SM_LevelData
         return CurCrossLevelCount + " / " + CrossLevelCount;
     }
 
+    public override string GetGameSettleString()
+    {
+        return "名次 : " + CurCharacter.Order;
+    }
+
     /// <summary>
     /// 是否在重点
     /// </summary>
