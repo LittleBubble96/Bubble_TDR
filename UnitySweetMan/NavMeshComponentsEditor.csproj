@@ -58,13 +58,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\NavMeshComponents\Editor\NavMeshAssetManager.cs" />
-     <Compile Include="Assets\NavMeshComponents\Editor\NavMeshComponentsGUIUtility.cs" />
-     <Compile Include="Assets\NavMeshComponents\Editor\NavMeshLinkEditor.cs" />
-     <Compile Include="Assets\NavMeshComponents\Editor\NavMeshModifierEditor.cs" />
-     <Compile Include="Assets\NavMeshComponents\Editor\NavMeshModifierVolumeEditor.cs" />
-     <Compile Include="Assets\NavMeshComponents\Editor\NavMeshSurfaceEditor.cs" />
-     <None Include="Assets\NavMeshComponents\Editor\NavMeshComponentsEditor.asmdef" />
+     <Compile Include="Assets\LoadResources\NavMeshComponents\Editor\NavMeshAssetManager.cs" />
+     <Compile Include="Assets\LoadResources\NavMeshComponents\Editor\NavMeshComponentsGUIUtility.cs" />
+     <Compile Include="Assets\LoadResources\NavMeshComponents\Editor\NavMeshLinkEditor.cs" />
+     <Compile Include="Assets\LoadResources\NavMeshComponents\Editor\NavMeshModifierEditor.cs" />
+     <Compile Include="Assets\LoadResources\NavMeshComponents\Editor\NavMeshModifierVolumeEditor.cs" />
+     <Compile Include="Assets\LoadResources\NavMeshComponents\Editor\NavMeshSurfaceEditor.cs" />
+     <None Include="Assets\LoadResources\NavMeshComponents\Editor\NavMeshComponentsEditor.asmdef" />
  <Reference Include="UnityEditor.UI">
  <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
@@ -265,12 +265,6 @@
  </Reference>
  <Reference Include="UnityEditor.Android.Extensions">
  <HintPath>C:/Work/Code/Unity/2019.4.0f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="DOTween">
- <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
- </Reference>
- <Reference Include="DOTweenEditor">
- <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
  <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>

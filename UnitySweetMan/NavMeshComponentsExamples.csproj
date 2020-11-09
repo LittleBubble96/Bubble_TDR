@@ -58,21 +58,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Examples\Scripts\AgentLinkMover.cs" />
-     <Compile Include="Assets\Examples\Scripts\ClickToMove.cs" />
-     <Compile Include="Assets\Examples\Scripts\DestroyOnTrigger.cs" />
-     <Compile Include="Assets\Examples\Scripts\DungeonManager.cs" />
-     <Compile Include="Assets\Examples\Scripts\EnableIffSleeping.cs" />
-     <Compile Include="Assets\Examples\Scripts\FreeCam.cs" />
-     <Compile Include="Assets\Examples\Scripts\LocalNavMeshBuilder.cs" />
-     <Compile Include="Assets\Examples\Scripts\MeshTool.cs" />
-     <Compile Include="Assets\Examples\Scripts\NavMeshPrefabInstance.cs" />
-     <Compile Include="Assets\Examples\Scripts\NavMeshSourceTag.cs" />
-     <Compile Include="Assets\Examples\Scripts\Oscillator.cs" />
-     <Compile Include="Assets\Examples\Scripts\RandomInstancing.cs" />
-     <Compile Include="Assets\Examples\Scripts\RandomWalk.cs" />
-     <Compile Include="Assets\Examples\Scripts\SpawnPrefabOnKeyDown.cs" />
-     <None Include="Assets\Examples\NavMeshComponentsExamples.asmdef" />
+     <Compile Include="Assets\LoadResources\Examples\Scripts\AgentLinkMover.cs" />
+     <Compile Include="Assets\LoadResources\Examples\Scripts\ClickToMove.cs" />
+     <Compile Include="Assets\LoadResources\Examples\Scripts\DestroyOnTrigger.cs" />
+     <Compile Include="Assets\LoadResources\Examples\Scripts\DungeonManager.cs" />
+     <Compile Include="Assets\LoadResources\Examples\Scripts\EnableIffSleeping.cs" />
+     <Compile Include="Assets\LoadResources\Examples\Scripts\FreeCam.cs" />
+     <Compile Include="Assets\LoadResources\Examples\Scripts\LocalNavMeshBuilder.cs" />
+     <Compile Include="Assets\LoadResources\Examples\Scripts\MeshTool.cs" />
+     <Compile Include="Assets\LoadResources\Examples\Scripts\NavMeshPrefabInstance.cs" />
+     <Compile Include="Assets\LoadResources\Examples\Scripts\NavMeshSourceTag.cs" />
+     <Compile Include="Assets\LoadResources\Examples\Scripts\Oscillator.cs" />
+     <Compile Include="Assets\LoadResources\Examples\Scripts\RandomInstancing.cs" />
+     <Compile Include="Assets\LoadResources\Examples\Scripts\RandomWalk.cs" />
+     <Compile Include="Assets\LoadResources\Examples\Scripts\SpawnPrefabOnKeyDown.cs" />
+     <None Include="Assets\LoadResources\Examples\NavMeshComponentsExamples.asmdef" />
  <Reference Include="UnityEditor.UI">
  <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
@@ -267,12 +267,6 @@
  </Reference>
  <Reference Include="UnityEditor.Android.Extensions">
  <HintPath>C:/Work/Code/Unity/2019.4.0f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="DOTween">
- <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
- </Reference>
- <Reference Include="DOTweenEditor">
- <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
  <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>

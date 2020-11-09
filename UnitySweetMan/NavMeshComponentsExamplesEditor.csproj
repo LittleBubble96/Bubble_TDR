@@ -58,8 +58,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Examples\Editor\NavMeshPrefabInstanceEditor.cs" />
-     <None Include="Assets\Examples\Editor\NavMeshComponentsExamplesEditor.asmdef" />
+     <Compile Include="Assets\LoadResources\Examples\Editor\NavMeshPrefabInstanceEditor.cs" />
+     <None Include="Assets\LoadResources\Examples\Editor\NavMeshComponentsExamplesEditor.asmdef" />
  <Reference Include="UnityEditor.UI">
  <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
@@ -260,12 +260,6 @@
  </Reference>
  <Reference Include="UnityEditor.Android.Extensions">
  <HintPath>C:/Work/Code/Unity/2019.4.0f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="DOTween">
- <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
- </Reference>
- <Reference Include="DOTweenEditor">
- <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
  <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>

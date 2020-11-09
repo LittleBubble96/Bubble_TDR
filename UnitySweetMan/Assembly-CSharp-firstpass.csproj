@@ -692,10 +692,6 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="NavMeshComponentsExamplesEditor.csproj">
-      <Project>{11B8D7E0-4F4A-7715-2446-54665D66AE0B}</Project>
-      <Name>NavMeshComponentsExamplesEditor</Name>
-    </ProjectReference>
     <ProjectReference Include="NavMeshComponentsEditor.csproj">
       <Project>{3A89E8EA-6C96-AEC3-4B6A-1F3008F6D1FF}</Project>
       <Name>NavMeshComponentsEditor</Name>
@@ -703,6 +699,10 @@
     <ProjectReference Include="NavMeshComponents.csproj">
       <Project>{8E7DBABE-9B42-68D8-EDE2-4BFB50D76284}</Project>
       <Name>NavMeshComponents</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponentsExamplesEditor.csproj">
+      <Project>{11B8D7E0-4F4A-7715-2446-54665D66AE0B}</Project>
+      <Name>NavMeshComponentsExamplesEditor</Name>
     </ProjectReference>
     <ProjectReference Include="NavMeshComponentsExamples.csproj">
       <Project>{94F97692-AFC0-2BA3-3D87-69692539CDFB}</Project>

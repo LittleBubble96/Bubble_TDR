@@ -58,12 +58,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Tests\Editor\NavMeshModifierVolumeInPrefabTests.cs" />
-     <Compile Include="Assets\Tests\Editor\NavMeshSurfaceInPrefabTests.cs" />
-     <Compile Include="Assets\Tests\Editor\NavMeshSurfaceInPrefabVariantTests.cs" />
-     <Compile Include="Assets\Tests\Editor\PrefabSavingUtil.cs" />
-     <Compile Include="Assets\Tests\Editor\PrefabStageAutoSavingUtil.cs" />
-     <None Include="Assets\Tests\Editor\NavMeshComponentsTestsEditmode.asmdef" />
+     <Compile Include="Assets\LoadResources\Tests\Editor\NavMeshModifierVolumeInPrefabTests.cs" />
+     <Compile Include="Assets\LoadResources\Tests\Editor\NavMeshSurfaceInPrefabTests.cs" />
+     <Compile Include="Assets\LoadResources\Tests\Editor\NavMeshSurfaceInPrefabVariantTests.cs" />
+     <Compile Include="Assets\LoadResources\Tests\Editor\PrefabSavingUtil.cs" />
+     <Compile Include="Assets\LoadResources\Tests\Editor\PrefabStageAutoSavingUtil.cs" />
+     <None Include="Assets\LoadResources\Tests\Editor\NavMeshComponentsTestsEditmode.asmdef" />
  <Reference Include="UnityEngine.TestRunner">
  <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
  </Reference>

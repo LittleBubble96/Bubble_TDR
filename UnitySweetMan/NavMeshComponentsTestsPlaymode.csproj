@@ -58,12 +58,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Tests\NavMeshSurfaceAgentTests.cs" />
-     <Compile Include="Assets\Tests\NavMeshSurfaceLinkTests.cs" />
-     <Compile Include="Assets\Tests\NavMeshSurfaceModifierTests.cs" />
-     <Compile Include="Assets\Tests\NavMeshSurfaceModifierVolumeTests.cs" />
-     <Compile Include="Assets\Tests\NavMeshSurfaceTests.cs" />
-     <None Include="Assets\Tests\NavMeshComponentsTestsPlaymode.asmdef" />
+     <Compile Include="Assets\LoadResources\Tests\NavMeshSurfaceAgentTests.cs" />
+     <Compile Include="Assets\LoadResources\Tests\NavMeshSurfaceLinkTests.cs" />
+     <Compile Include="Assets\LoadResources\Tests\NavMeshSurfaceModifierTests.cs" />
+     <Compile Include="Assets\LoadResources\Tests\NavMeshSurfaceModifierVolumeTests.cs" />
+     <Compile Include="Assets\LoadResources\Tests\NavMeshSurfaceTests.cs" />
+     <None Include="Assets\LoadResources\Tests\NavMeshComponentsTestsPlaymode.asmdef" />
  <Reference Include="UnityEngine.TestRunner">
  <HintPath>E:/GitHub/SweetBaby/UnitySweetMan/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
  </Reference>
