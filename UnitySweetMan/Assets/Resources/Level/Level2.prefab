@@ -637,7 +637,7 @@ MonoBehaviour:
   CharacterAIs: []
   Props: []
   Target: {fileID: 885912253859959308}
-  GameTime: 360
+  GameTime: 120
 --- !u!1 &4471838933462670762
 GameObject:
   m_ObjectHideFlags: 0
