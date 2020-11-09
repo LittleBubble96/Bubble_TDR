@@ -25,13 +25,16 @@ public class SM_SceneManager : Bubble_MonoSingle<SM_SceneManager>
     [HideInInspector]
     public SM_LevelData CurLevelData;
 
-   
-
     /// <summary>
     /// 当前相机
     /// </summary>
     [HideInInspector] 
     public CameraManager CurCamera;
+
+    /// <summary>
+    ///上一关关卡下标
+    /// </summary>
+    private int lastLevelIndex;
     public void Init()
     {
         CurCamera = Instantiate(Camera, transform);
@@ -57,6 +60,10 @@ public class SM_SceneManager : Bubble_MonoSingle<SM_SceneManager>
         //随机下标
         int r = Utility.Random.GetRandom(LevelDatas.Count);
         r %= LevelDatas.Count;
+        r = r != lastLevelIndex ? r :
+            r + 1 < LevelDatas.Count ? r + 1 :
+            r - 1 >= 0 ? r - 1 : 0;
+        lastLevelIndex = r;
         //创建新关卡
         SM_LevelData level = LevelDatas[r];
         CurLevelData = Instantiate(level, transform);

@@ -149,6 +149,7 @@ public class SM_LevelData : MonoBehaviour
                     case ELevelState.WaitPlay:
                         _waitBeginTime = WaitBeginTime + 3;
                         BubbleFrameEntry.GetModel<AppEventDispatcher>().BroadcastListener(EventName.EVENT_COUNTDOWN,3);
+                        BubbleFrameEntry.GetModel<AppEventDispatcher>().BroadcastListener(EventName.EVENT_CHANGECROSSCOUNT);
                         break;
                     case ELevelState.Playing:
                         break;
