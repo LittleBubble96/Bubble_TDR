@@ -58,9 +58,7 @@ public class CharacterControls : SM_CharacterBase {
 	void FixedUpdate ()
 	{
 		characterAnimator.DoUpdate(Time.deltaTime);
-		//开始玩
-		if (SM_SceneManager.Instance.CurLevelData.ELevelState!=ELevelState.Playing)
-			return;
+		
 		//成功
 		if (characterAnimator.AnimatorState.Success)
 		{
@@ -75,6 +73,9 @@ public class CharacterControls : SM_CharacterBase {
 			rb.velocity = Vector3.zero;
 			return;
 		}
+		//开始玩
+		if (SM_SceneManager.Instance.CurLevelData.ELevelState!=ELevelState.Playing)
+			return;
 		characterAnimator.SetIdle(IsGrounded() &&
 		                           moveDir==Vector3.zero);
 		characterAnimator.SetRun( IsGrounded() &&

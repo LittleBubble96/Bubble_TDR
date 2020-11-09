@@ -32,6 +32,10 @@ public class SM_SliderBall : PropBase
     private GameObject curOuttingBall;
 
     /// <summary>
+    /// 当前正在吐得球的刚体
+    /// </summary>
+    private Rigidbody curOuttingBallRigi;
+    /// <summary>
     /// 球得集合
     /// </summary>
     private List<GameObject> balls = new List<GameObject>();
@@ -40,6 +44,7 @@ public class SM_SliderBall : PropBase
     {
         ballPrefab = transform.Find("Ball").gameObject;
         curOuttingBall = OutNewBall();
+        tempoutBallTime = OutBallTime;
     }
 
     void Update()
@@ -57,18 +62,20 @@ public class SM_SliderBall : PropBase
             {
                 //吐球
                 int dir = Utility.Random.GetRandom(-1, 1);
-                float x = (float) Utility.Random.GetRandomDouble();
+                float x = dir * (float) Utility.Random.GetRandomDouble();
                 float y = (-1) * (float) Utility.Random.GetRandomDouble();
                 float z = (-1) * (float) Utility.Random.GetRandomDouble();
                 Vector3 randomDir = new Vector3(x, y, z);
                 DDebug.Log("randomDir:" + randomDir);
-                curOuttingBall.GetComponent<Rigidbody>().velocity = randomDir * 10f;
+                curOuttingBallRigi.isKinematic = false;
+                curOuttingBallRigi.velocity = randomDir * 10f;
                 curOuttingBall = OutNewBall();
+                tempoutBallTime = OutBallTime;
             }
         }
 
         //检测球是否销毁进入缓存
-        for (int i = balls.Count-1; i >0; i--)
+        for (int i = balls.Count-1; i >=0; i--)
         {
             if (balls[i].transform.position.y<SM_SceneManager.Instance.CurLevelData._deathPoint.transform.position.y)
             {
@@ -86,11 +93,14 @@ public class SM_SliderBall : PropBase
     /// <returns></returns>
     GameObject OutNewBall()
     {
-        GameObject ballObj = ballQueue.Count > 0 ? ballQueue.Dequeue() : Instantiate(ballPrefab);
+        GameObject ballObj = ballQueue.Count > 0 ? ballQueue.Dequeue() : Instantiate(ballPrefab,transform);
         ballObj.transform.position = ballPrefab.transform.position;
         ballObj.transform.localScale =Vector3.zero;
+        ballObj.SetActive(true);
         curOuttingBall = ballObj;
         balls.Add(ballObj);
+        curOuttingBallRigi = curOuttingBall.GetComponent<Rigidbody>();
+        curOuttingBallRigi.isKinematic = true;
         return ballObj;
     }
 }
