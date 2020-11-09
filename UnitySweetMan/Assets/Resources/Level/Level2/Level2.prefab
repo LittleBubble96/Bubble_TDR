@@ -586,7 +586,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 9e51dc203a775af4fbaa1edff3421384, type: 2}
+  m_NavMeshData: {fileID: 0}
 --- !u!114 &3508645584367984884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -615,7 +615,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 8323673be9f197d46bbc32e4efd3116c, type: 2}
+  m_NavMeshData: {fileID: 0}
 --- !u!114 &6281410359064010626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -637,7 +637,7 @@ MonoBehaviour:
   CharacterAIs: []
   Props: []
   Target: {fileID: 885912253859959308}
-  GameTime: 120
+  GameTime: 10
 --- !u!1 &4471838933462670762
 GameObject:
   m_ObjectHideFlags: 0

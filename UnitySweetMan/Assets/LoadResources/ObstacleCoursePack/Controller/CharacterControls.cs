@@ -57,6 +57,9 @@ public class CharacterControls : SM_CharacterBase {
 	
 	void FixedUpdate ()
 	{
+		//开始玩
+		if (SM_GameManager.Instance.GameState==EGameState.GameMain)
+			return;
 		characterAnimator.DoUpdate(Time.deltaTime);
 		
 		//成功

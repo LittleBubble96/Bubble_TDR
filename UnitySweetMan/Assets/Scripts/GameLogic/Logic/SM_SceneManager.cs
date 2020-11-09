@@ -11,13 +11,23 @@ public class SM_SceneManager : Bubble_MonoSingle<SM_SceneManager>
     [Bubble_Name("角色")]
     public List<CharacterControls> CharacterControlses =new List<CharacterControls>();
 
-    [Bubble_Name("相机")] public CameraManager Camera;
+    [Bubble_Name("UI角色")] 
+    public List<GameObject> CharacterUIs = new List<GameObject>();
+    
+    [Bubble_Name("相机")]
+    public CameraManager Camera;
 
     [Bubble_Name("所有AI")] 
     public List<SM_CharacterAIBase> CharacterAIBases = new List<SM_CharacterAIBase>();
     
     [Bubble_Name("人物出生掉落高度")] 
     public float BirthHeight = 10f;
+
+    /// <summary>
+    /// 当前通关数
+    /// </summary>
+    [HideInInspector] 
+    public int CrossLevelCount;
     
     /// <summary>
     /// 当前关卡
@@ -32,9 +42,11 @@ public class SM_SceneManager : Bubble_MonoSingle<SM_SceneManager>
     public CameraManager CurCamera;
 
     /// <summary>
-    ///上一关关卡下标
+    /// 当前选择得人物下表
     /// </summary>
-    private int lastLevelIndex;
+    [HideInInspector] 
+    public int SelectCharacterIndex;
+    
     public void Init()
     {
         CurCamera = Instantiate(Camera, transform);
@@ -58,12 +70,8 @@ public class SM_SceneManager : Bubble_MonoSingle<SM_SceneManager>
             return;
         }
         //随机下标
-        int r = Utility.Random.GetRandom(LevelDatas.Count);
-        r %= LevelDatas.Count;
-        r = r != lastLevelIndex ? r :
-            r + 1 < LevelDatas.Count ? r + 1 :
-            r - 1 >= 0 ? r - 1 : 0;
-        lastLevelIndex = r;
+        int r =CrossLevelCount %= LevelDatas.Count;
+        
         //创建新关卡
         SM_LevelData level = LevelDatas[r];
         CurLevelData = Instantiate(level, transform);
@@ -82,5 +90,15 @@ public class SM_SceneManager : Bubble_MonoSingle<SM_SceneManager>
         {
             DestroyImmediate(CurLevelData.gameObject);
         }
+    }
+
+    /// <summary>
+    /// 检测是否全部通关
+    /// </summary>
+    /// <returns></returns>
+    public bool CheckCrossAll()
+    {
+        return CrossLevelCount / LevelDatas.Count >= 1;
+
     }
 }

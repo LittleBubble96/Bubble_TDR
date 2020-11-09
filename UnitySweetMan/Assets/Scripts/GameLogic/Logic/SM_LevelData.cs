@@ -147,7 +147,7 @@ public class SM_LevelData : MonoBehaviour
                     case ELevelState.None:
                         break;
                     case ELevelState.WaitPlay:
-                        _waitBeginTime = WaitBeginTime + 3;
+                        _waitBeginTime = WaitBeginTime;
                         BubbleFrameEntry.GetModel<AppEventDispatcher>().BroadcastListener(EventName.EVENT_COUNTDOWN,3);
                         BubbleFrameEntry.GetModel<AppEventDispatcher>().BroadcastListener(EventName.EVENT_CHANGECROSSCOUNT);
                         break;
@@ -157,6 +157,15 @@ public class SM_LevelData : MonoBehaviour
                         _waitTime = WaitTime;
                         break;
                     case ELevelState.Settle:
+                        if (CurCharacter.characterAnimator.AnimatorState.Success)
+                        {
+                            SM_GameManager.Instance.SuccessLevel();
+                        }
+                        else
+                        {
+                            SM_GameManager.Instance.FailedLevel();
+                        }
+
                         SM_GameManager.Instance.GameState = EGameState.Settling;
                         break;
                 }

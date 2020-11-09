@@ -5,35 +5,33 @@ using UnityEngine;
 
 public class SM_Level1 : SM_LevelData
 {
-    [Bubble_Name("过关数")] 
-    public int CrossLevelCount;
-    
-   
-    
-    private Transform EndTriggerRect;
-    
-    private int crossLevelCount;
-    
-    /// <summary>
-    /// 当前过关数
-    /// </summary>
-    public int CurCrossLevelCount
+    [Bubble_Name("游戏计时")] 
+    public float GameTime;
+
+    private float curGameTime;
+    public float CurGameTime
     {
-        get => crossLevelCount;
-        private set
+        get => curGameTime;
+        set
         {
-            if (crossLevelCount!=value)
+            if (curGameTime!=value)
             {
-                crossLevelCount = value;
+                curGameTime = value;
                 BubbleFrameEntry.GetModel<AppEventDispatcher>().BroadcastListener(EventName.EVENT_CHANGECROSSCOUNT);
             }
         }
     }
+   
+    
+    private Transform EndTriggerRect;
+    
+    
 
     public override void Init()
     {
         base.Init();
         EndTriggerRect = transform.Find("EndTriggerRect");
+        CurGameTime = GameTime;
 
     }
 
@@ -44,34 +42,27 @@ public class SM_Level1 : SM_LevelData
         {
             return;
         }
+      
+        CurGameTime -= dt;
+       
         //判断结束
-        if (CurCrossLevelCount >= CrossLevelCount)
+        if (CurGameTime <= 0 )
         {
+            CurCharacter.characterAnimator.AnimatorState.Failed = true;
             ELevelState = ELevelState.WaitSettle;
         }
+        
+        
         //主角是否过关
         if (!CurCharacter.characterAnimator.AnimatorState.Success && IsContainEndTrigger(CurCharacter.transform))
         {
             DDebug.Log("主角过关");
             CurCharacter.characterAnimator.AnimatorState.Success = true;
-            CurCrossLevelCount++;
-            CurCharacter.Order = CurCrossLevelCount;
+            ELevelState = ELevelState.WaitSettle;
         }
 
-        //AI是否过关
-        foreach (var ai in CharacterAIs)
-        {
-            if (!ai.CharacterAnimator.AnimatorState.Success && IsContainEndTrigger(ai.transform))
-            {
-                DDebug.Log("AI过关");
-                ai.CharacterAnimator.AnimatorState.Success = true;
-                CurCrossLevelCount++;
-                ai.Order = CurCrossLevelCount;
-            }
-        }
 
-        
-        
+
         //人物死亡
         if (CurCharacter.transform.position.y<_deathPoint.transform.position.y)
         {
@@ -86,12 +77,17 @@ public class SM_Level1 : SM_LevelData
 
     public override string GetGameString()
     {
-        return CurCrossLevelCount + " / " + CrossLevelCount;
+        int m = (int)CurGameTime / 60;
+        int s = (int) CurGameTime % 60;
+        return m +" : "+ s;
     }
 
     public override string GetGameSettleString()
     {
-        return "名次 : " + CurCharacter.Order;
+        string settleString = CurCharacter.characterAnimator.AnimatorState.Success
+            ? $"恭喜通关第{SM_SceneManager.Instance.CrossLevelCount}关!!!"
+            : $"可惜止步{SM_SceneManager.Instance.CrossLevelCount}关!!!";
+        return settleString;
     }
 
     /// <summary>

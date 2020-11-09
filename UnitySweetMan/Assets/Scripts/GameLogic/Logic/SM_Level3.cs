@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using BubbleFramework.Bubble_Event;
 using UnityEngine;
 
-public class SM_Level2 : SM_LevelData
+public class SM_Level3 : SM_LevelData
 {
     [Bubble_Name("游戏计时")] 
     public float GameTime;
@@ -77,5 +77,4 @@ public class SM_Level2 : SM_LevelData
         int s = (int) CurGameTime % 60;
         return m +" : "+ s;
     }
-    
 }

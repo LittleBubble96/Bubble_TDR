@@ -304,6 +304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OrderText: {fileID: 5057503505895193532}
   NextBtn: {fileID: 2708033733811773897}
+  BtnText: {fileID: 4898787623014950407}
 --- !u!1 &4947541771348702686
 GameObject:
   m_ObjectHideFlags: 0

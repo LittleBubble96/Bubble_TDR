@@ -21,6 +21,7 @@ public class SM_GameManager : Bubble_MonoSingle<SM_GameManager>
     /// </summary>
     private void Awake()
     {
+        BubbleFrameEntry.Awake();
         SM_SceneManager.Instance.Init();
         
         _dt = Time.deltaTime;
@@ -32,6 +33,8 @@ public class SM_GameManager : Bubble_MonoSingle<SM_GameManager>
     /// </summary>
     private void Update()
     {
+        BubbleFrameEntry.Update();
+
         if (Instance.GameState==EGameState.Playing)
         {
             SM_SceneManager.Instance.DoUpdate(_dt);
@@ -78,4 +81,48 @@ public class SM_GameManager : Bubble_MonoSingle<SM_GameManager>
             }
         }
     }
+    
+    /// <summary>
+    /// 通关
+    /// </summary>
+    public void SuccessLevel()
+    {
+        SM_SceneManager.Instance.CrossLevelCount++;
+        GameState = EGameState.Settling;
+    }
+
+    /// <summary>
+    /// 失败
+    /// </summary>
+    public void FailedLevel()
+    {
+        GameState = EGameState.Settling;
+    }
+
+    /// <summary>
+    /// 游戏继续
+    /// </summary>
+    public void GameContinue()
+    {
+        SM_SceneManager.Instance.CreateLevel();
+        if (SM_SceneManager.Instance.CheckCrossAll())
+        {
+            SM_SceneManager.Instance.CrossLevelCount = 0;
+            GameState = EGameState.GameMain;
+        }
+        else
+        {
+            GameState = EGameState.Playing;
+        }
+    }
+
+    /// <summary>
+    /// 重新开始
+    /// </summary>
+    public void GameRestart()
+    {
+        GameState = EGameState.Playing;
+    }
+    
+    
 }
