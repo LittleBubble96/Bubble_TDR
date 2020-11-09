@@ -57,10 +57,7 @@ public class SM_LevelData : MonoBehaviour
         
         Props = GetComponentsInChildren<PropBase>().ToList();
             
-        //创建人物
-        CurCharacter = Instantiate(SM_SceneManager.Instance.CharacterControlses[0], transform);
-        CurCharacter.Init();
-        CurCharacter.transform.position = _birthPoint.position;
+       
 
         CreateAIList();
     }
@@ -147,6 +144,12 @@ public class SM_LevelData : MonoBehaviour
                     case ELevelState.None:
                         break;
                     case ELevelState.WaitPlay:
+                        //创建人物
+                        CurCharacter = Instantiate(SM_SceneManager.Instance.CharacterControlses[SM_SceneManager.Instance.SelectCharacterIndex], transform);
+                        CurCharacter.Init();
+                        CurCharacter.transform.position = _birthPoint.position;
+                        SM_SceneManager.Instance.CurCamera.SetTarget(CurCharacter.transform);
+
                         _waitBeginTime = WaitBeginTime;
                         BubbleFrameEntry.GetModel<AppEventDispatcher>().BroadcastListener(EventName.EVENT_COUNTDOWN,3);
                         BubbleFrameEntry.GetModel<AppEventDispatcher>().BroadcastListener(EventName.EVENT_CHANGECROSSCOUNT);

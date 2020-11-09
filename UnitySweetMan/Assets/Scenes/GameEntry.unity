@@ -249,14 +249,14 @@ MonoBehaviour:
   - {fileID: 5542209326295594714, guid: d085e5990063dbd458538e7953b0819c, type: 3}
   CharacterControlses:
   - {fileID: 61890797030518931, guid: 57c9afed79aba144ebfbe8f9f668d4b9, type: 3}
-  - {fileID: 61890797030518931, guid: 57c9afed79aba144ebfbe8f9f668d4b9, type: 3}
-  - {fileID: 61890797030518931, guid: 57c9afed79aba144ebfbe8f9f668d4b9, type: 3}
-  - {fileID: 61890797030518931, guid: 57c9afed79aba144ebfbe8f9f668d4b9, type: 3}
+  - {fileID: 61890797030518931, guid: 5743fa0dda5dec642af995398fc28e4f, type: 3}
+  - {fileID: 61890797030518931, guid: 86839e6aed4d41e46911c9831718ead2, type: 3}
+  - {fileID: 61890797030518931, guid: e84198ed416bc584c876445c59d7ab65, type: 3}
   CharacterUIs:
-  - {fileID: 519971766596371793, guid: 170f7917b7f61c64d94006df635ff149, type: 3}
-  - {fileID: 519971766596371793, guid: 170f7917b7f61c64d94006df635ff149, type: 3}
-  - {fileID: 519971766596371793, guid: 170f7917b7f61c64d94006df635ff149, type: 3}
-  - {fileID: 519971766596371793, guid: 170f7917b7f61c64d94006df635ff149, type: 3}
+  - {fileID: 61890797030518932, guid: a5bb85ee18bf0ed4a87c23fe34933d5e, type: 3}
+  - {fileID: 61890797030518932, guid: f0dd9dbb007134f48a8e899410ca6d25, type: 3}
+  - {fileID: 61890797030518932, guid: ec4f0e3765b57af429742d59747abc79, type: 3}
+  - {fileID: 61890797030518932, guid: b0b81c2e767b22440a36b4bfe7ebc841, type: 3}
   Camera: {fileID: 8529583332128186654, guid: f2fa009e26a0fc8468f7ce3b0a0af97f, type: 3}
   CharacterAIBases:
   - {fileID: -2741691308553198620, guid: 34c0bdb321d9e0c44a4a551157ca0e2a, type: 3}

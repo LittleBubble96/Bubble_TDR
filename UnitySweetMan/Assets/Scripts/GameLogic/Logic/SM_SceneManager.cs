@@ -77,7 +77,6 @@ public class SM_SceneManager : Bubble_MonoSingle<SM_SceneManager>
         CurLevelData = Instantiate(level, transform);
         CurLevelData.Init();
         
-        CurCamera.SetTarget(CurLevelData.CurCharacter.transform);
         
     }
 
