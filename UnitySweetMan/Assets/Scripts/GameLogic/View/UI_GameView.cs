@@ -18,6 +18,10 @@ public class UI_GameView : UI_Base<UI_GameContent>
 
     [Bubble_Name("渐变Canvas")] 
     public CanvasGroup Alpha;
+
+    [Bubble_Name("关卡描述")] 
+    public Text LevelText;
+    
     public override void Init()
     {
         base.Init();
@@ -58,6 +62,7 @@ public class UI_GameView : UI_Base<UI_GameContent>
     public override void SetContent(UI_BaseContent content)
     {
         base.SetContent(content);
+        LevelText.text = SM_SceneManager.Instance.CurLevelData.LevelDes;
     }
 
     /// <summary>

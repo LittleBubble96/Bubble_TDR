@@ -19,6 +19,8 @@ public class SM_LevelData : MonoBehaviour
     [Bubble_Name("等待结算时间")]
     public float WaitTime = 3f;
 
+    [Bubble_Name("关卡描述规则")] 
+    public string LevelDes;
     
     private ELevelState _eLevelState;
     
