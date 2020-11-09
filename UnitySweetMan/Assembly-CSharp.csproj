@@ -124,6 +124,7 @@
      <Compile Include="Assets\Scripts\GameLogic\Prop\PropBase.cs" />
      <Compile Include="Assets\Scripts\GameLogic\Prop\SM_HideProp.cs" />
      <Compile Include="Assets\Scripts\GameLogic\Prop\SM_HidePropChild.cs" />
+     <Compile Include="Assets\Scripts\GameLogic\Prop\SM_SliderBall.cs" />
      <Compile Include="Assets\Scripts\GameLogic\View\UI_GameHomeView.cs" />
      <Compile Include="Assets\Scripts\GameLogic\View\UI_GameSettleView.cs" />
      <Compile Include="Assets\Scripts\GameLogic\View\UI_GameView.cs" />
