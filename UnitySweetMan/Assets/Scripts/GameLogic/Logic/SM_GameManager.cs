@@ -124,6 +124,7 @@ public class SM_GameManager : Bubble_MonoSingle<SM_GameManager>
     /// </summary>
     public void GameRestart()
     {
+        SM_SceneManager.Instance.CrossLevelCount = 0;
         GameState = EGameState.GameMain;
     }
     
