@@ -9078,11 +9078,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FallPlat
       objectReference: {fileID: 0}
-    - target: {fileID: 7801942558486612319, guid: ca3d4eda37376c8428997c5a714d2487,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 123
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca3d4eda37376c8428997c5a714d2487, type: 3}
 --- !u!4 &4471838933865050478 stripped
