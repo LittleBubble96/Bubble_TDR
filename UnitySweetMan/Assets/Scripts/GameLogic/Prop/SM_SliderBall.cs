@@ -66,7 +66,6 @@ public class SM_SliderBall : PropBase
                 float y = (-1) * (float) Utility.Random.GetRandomDouble();
                 float z = (-1) * (float) Utility.Random.GetRandomDouble();
                 Vector3 randomDir = new Vector3(x, y, z);
-                DDebug.Log("randomDir:" + randomDir);
                 curOuttingBallRigi.isKinematic = false;
                 curOuttingBallRigi.velocity = randomDir * 10f;
                 curOuttingBall = OutNewBall();

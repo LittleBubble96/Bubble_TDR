@@ -124,7 +124,7 @@ public class SM_GameManager : Bubble_MonoSingle<SM_GameManager>
     /// </summary>
     public void GameRestart()
     {
-        GameState = EGameState.Playing;
+        GameState = EGameState.GameMain;
     }
     
     

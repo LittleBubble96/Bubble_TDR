@@ -249,6 +249,7 @@ MonoBehaviour:
   - {fileID: 5542209326295594714, guid: 6265854bf06ab0d46a312a749dc56788, type: 3}
   - {fileID: 6281410359064010626, guid: 4051a169e3713cd4ab854860dea2f316, type: 3}
   - {fileID: 5542209326295594714, guid: d085e5990063dbd458538e7953b0819c, type: 3}
+  - {fileID: 5542209326295594714, guid: 773dea4670064a94089271928d3028db, type: 3}
   CharacterControlses:
   - {fileID: 61890797030518931, guid: 57c9afed79aba144ebfbe8f9f668d4b9, type: 3}
   - {fileID: 61890797030518931, guid: 5743fa0dda5dec642af995398fc28e4f, type: 3}
@@ -320,7 +321,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
