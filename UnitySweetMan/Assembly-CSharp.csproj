@@ -115,6 +115,7 @@
      <Compile Include="Assets\Scripts\GameLogic\Character\SM_CharacterAIBase.cs" />
      <Compile Include="Assets\Scripts\GameLogic\Character\SM_CharacterAnimator.cs" />
      <Compile Include="Assets\Scripts\GameLogic\Character\SM_CharacterBase.cs" />
+     <Compile Include="Assets\Scripts\GameLogic\Logic\SM_AudioManager.cs" />
      <Compile Include="Assets\Scripts\GameLogic\Logic\SM_GameManager.cs" />
      <Compile Include="Assets\Scripts\GameLogic\Logic\SM_Level1.cs" />
      <Compile Include="Assets\Scripts\GameLogic\Logic\SM_Level2.cs" />

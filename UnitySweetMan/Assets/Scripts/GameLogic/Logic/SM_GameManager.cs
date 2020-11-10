@@ -23,6 +23,7 @@ public class SM_GameManager : Bubble_MonoSingle<SM_GameManager>
     {
         BubbleFrameEntry.Awake();
         SM_SceneManager.Instance.Init();
+        SM_AudioManager.Instance.Init();
         
         _dt = Time.deltaTime;
         GameState = EGameState.GameMain;
@@ -37,7 +38,7 @@ public class SM_GameManager : Bubble_MonoSingle<SM_GameManager>
 
         if (Instance.GameState==EGameState.Playing)
         {
-            SM_SceneManager.Instance.DoUpdate(_dt);
+            SM_SceneManager.Instance.DoUpdate(Time.deltaTime);
         }
     }
     
@@ -61,11 +62,13 @@ public class SM_GameManager : Bubble_MonoSingle<SM_GameManager>
                         //创建关卡
                         SM_SceneManager.Instance.CreateLevel();
                         Cursor.visible = true;
+                        SM_AudioManager.Instance.PlayBGM(SM_SceneManager.Instance.uiAudio);
                         break;
                     case EGameState.Playing:
                         //关闭其他页面 显示游戏页
                         BubbleFrameEntry.GetModel<UI_Manager>().HideView(UIType.Normal);
                         BubbleFrameEntry.GetModel<UI_Manager>().Show(UI_Name.UI_GameView,new UI_GameContent());
+                        SM_AudioManager.Instance.PlayBGM(SM_SceneManager.Instance.CurLevelData.levelBGM);
                         //设置鼠标不可见
                         Cursor.visible = false;
                         SM_SceneManager.Instance.CurLevelData.ELevelState = ELevelState.WaitPlay;
@@ -107,8 +110,8 @@ public class SM_GameManager : Bubble_MonoSingle<SM_GameManager>
         SM_SceneManager.Instance.CreateLevel();
         if (SM_SceneManager.Instance.CheckCrossAll())
         {
-            SM_SceneManager.Instance.CrossLevelCount = 0;
             GameState = EGameState.GameMain;
+            SM_SceneManager.Instance.CrossLevelCount = 0;
         }
         else
         {

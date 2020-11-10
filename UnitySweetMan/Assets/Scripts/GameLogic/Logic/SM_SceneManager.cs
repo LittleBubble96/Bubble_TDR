@@ -23,6 +23,8 @@ public class SM_SceneManager : Bubble_MonoSingle<SM_SceneManager>
     [Bubble_Name("人物出生掉落高度")] 
     public float BirthHeight = 10f;
 
+    [Bubble_Name("UI音乐")] 
+    public AudioClip uiAudio;
     /// <summary>
     /// 当前通关数
     /// </summary>
@@ -70,7 +72,7 @@ public class SM_SceneManager : Bubble_MonoSingle<SM_SceneManager>
             return;
         }
         //随机下标
-        int r =CrossLevelCount %= LevelDatas.Count;
+        int r =(CrossLevelCount % LevelDatas.Count);
         
         //创建新关卡
         SM_LevelData level = LevelDatas[r];

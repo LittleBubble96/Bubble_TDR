@@ -21,6 +21,9 @@ public class SM_LevelData : MonoBehaviour
 
     [Bubble_Name("关卡描述规则")] 
     public string LevelDes;
+
+    [Bubble_Name("音效")] 
+    public AudioClip levelBGM;
     
     private ELevelState _eLevelState;
     

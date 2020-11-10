@@ -630,10 +630,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80deda6687f0da24f8d0752bfd53724f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AiCount: 1
+  AiCount: 0
   WaitBeginTime: 3
   WaitTime: 3
   LevelDes: "\u8BF7\u5728\u89C4\u5B9A\u65F6\u95F4\u5185\u5B8C\u6210\u672C\u5C40\u6BD4\u8D5B"
+  levelBGM: {fileID: 8300000, guid: 13ba38fe96b4c6b4d9ba2b446e7c365b, type: 3}
   _birthPoint: {fileID: 0}
   _deathPoint: {fileID: 0}
   CurCharacter: {fileID: 0}

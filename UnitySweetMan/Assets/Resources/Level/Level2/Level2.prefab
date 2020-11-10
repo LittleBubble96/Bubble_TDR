@@ -632,6 +632,7 @@ MonoBehaviour:
   WaitBeginTime: 3
   WaitTime: 3
   LevelDes: "\u8BF7\u5728\u89C4\u5B9A\u65F6\u95F4\u5185\u4FDD\u8BC1\u81EA\u5DF1\u6D3B\u7740"
+  levelBGM: {fileID: 8300000, guid: 2d74731a2d4a3bc4588e580f2f2522ce, type: 3}
   _birthPoint: {fileID: 0}
   _deathPoint: {fileID: 0}
   CurCharacter: {fileID: 0}
